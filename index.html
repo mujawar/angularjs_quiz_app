@@ -23,8 +23,26 @@
         </h3>
     </div>
 
-     <div ng-controller="listCtrl">
-          {{2+4+2}}
+     <div ng-controller="listCtrl as list">
+          <div class="row">
+              <div class="col-sm-6" ng-repeat="turtle in list.data">
+              <div class="well well-sm">
+                  <div class="row">
+                      <div class="col-md-6">
+                         <img src="" class="img-rounded img-responsive">
+                      </div>
+                      <div class="col-md-6">
+                          <h4>{{turtle.type}}</h4>
+                          <p><strong>Location: </strong>{{turtle.location}}</p>
+                          <p><strong>Size: </strong>{{turtle.size}}</p>
+                          <p><strong>Average LifeSpan: </strong>{{turtle.lifespan}}</p>
+                          <p><strong>Diet: </strong>{{turtle.diet}}</p>
+
+                      </div>
+                  </div>
+              </div>
+              </div>
+          </div>
      </div>
 
 
