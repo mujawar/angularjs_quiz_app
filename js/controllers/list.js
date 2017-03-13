@@ -7,6 +7,12 @@
         function ListController($scope) {
             var vm =this;
             vm.data=turtlesData;
+            vm.activeTurtle={};
+            vm.changeActiveTurle = changeActiveTurle;
+
+            function changeActiveTurle(index) {
+                vm.activeTurtle = index;
+            }
         }
 
     var turtlesData = [
