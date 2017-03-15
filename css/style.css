@@ -13,3 +13,26 @@
 .answer:hover{
     cursor: pointer;
 }
+.image-answer{
+    cursor: pointer;
+    height: 162px;
+    width: 100%;
+    overflow: hidden;
+    border-radius:10px ;
+    margin-bottom: 20px;
+}
+
+.image-answer{
+    width: 100%;
+    height: 162px;
+}
+
+.image-selected{
+    border: 3px solid blue;
+}
+.image-answer.bg-success{
+    border: 3px solid green;
+}
+.image-answer.bg-danger{
+    border: 3px solid red;
+}
