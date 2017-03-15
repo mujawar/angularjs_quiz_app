@@ -22,8 +22,16 @@
     </div>
 
      <div ng-controller="listCtrl as list">
+         <form class="form-inline well well-sm clearfix">
+             <span class="glyphicon glyphicon-search"></span>
+             <input type="text"
+             placeholder="Search..."
+             class="form-control"
+             ng-model="list.search">
+             <button class="btn btn-warning pull-right"> <strong>Start Quiz</strong></button>
+         </form>
           <div class="row">
-              <div class="col-sm-6" ng-repeat="turtle in list.data">
+              <div class="col-sm-6" ng-repeat="turtle in list.data | filter:list.search">
               <div class="well well-sm">
                   <div class="row">
                       <div class="col-md-6">
@@ -64,6 +72,11 @@
                                  <p><strong>Average Lifespan: </strong>{{list.activeTurtle.lifespan}}</p>
                                  <p><strong>Diet: </strong>{{list.activeTurtle.diet}}</p>
                              </div>
+                             <div class="col-xs-12 top-buffer">
+                                 <p>{{list.activeTurtle.description}}</p>
+                                 <button class="btn btn-danger pull-right"
+                                         data-dismiss="modal">Close</button>
+                                </div>
                          </div>
                      </div>
                  </div>

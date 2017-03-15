@@ -9,6 +9,7 @@
             vm.data=turtlesData;
             vm.activeTurtle={};
             vm.changeActiveTurle = changeActiveTurle;
+            vm.search = '';
 
             function changeActiveTurle(index) {
                 vm.activeTurtle = index;
