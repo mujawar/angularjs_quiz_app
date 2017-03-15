@@ -20,7 +20,7 @@
             }
 
             function avtivateQuiz() {
-                quizMetrics.changeState(true);
+                quizMetrics.changeState("quiz",true);
             }
         }
 
