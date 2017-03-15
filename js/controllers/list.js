@@ -2,17 +2,25 @@
     angular
         .module('myApp')
         .controller('listCtrl',ListController);
+    ListController.$inject = ['quizMetrics'];
     
     
-        function ListController($scope) {
+        function ListController(quizMetrics) {
             var vm =this;
+            vm.quizMetrics = quizMetrics;
             vm.data=turtlesData;
             vm.activeTurtle={};
             vm.changeActiveTurle = changeActiveTurle;
+            vm.avtivateQuiz = avtivateQuiz;
             vm.search = '';
+
 
             function changeActiveTurle(index) {
                 vm.activeTurtle = index;
+            }
+
+            function avtivateQuiz() {
+                quizMetrics.changeState(true);
             }
         }
 
