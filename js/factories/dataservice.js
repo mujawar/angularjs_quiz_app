@@ -11,10 +11,11 @@
         var dataObj = {
             turtlesData: turtlesData,
             quizQuestions: quizQuestions,
+            correctAnswer:correctAnswer
         };
         return dataObj;
     }
-
+    var correctAnswer = [1,2,3,0,2,0,3,2,0,3];
     var quizQuestions  = [
         {
             type: "text",
