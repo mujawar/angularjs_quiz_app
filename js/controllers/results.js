@@ -5,14 +5,14 @@
 (function () {
     angular
         .module('myApp')
-        .controller('resultsCtrl',ResultsController);
-    ResultsController.$inject = ['quizMetrics','DataService'];
-    
-    
-    function ResultsController(quizMetrics,DataService) {
+        .controller('resultsCtrl', ResultsController);
+    ResultsController.$inject = ['quizMetrics', 'DataService'];
+
+
+    function ResultsController(quizMetrics, DataService) {
         var vm = this;
         vm.quizMetrics = quizMetrics;
-        vm.DataService =DataService;
+        vm.DataService = DataService;
         vm.activeQuestion = 0;
         vm.getAnswerClass = getAnswerClass;
         vm.setActiveQuestion = setActiveQuestion;
@@ -20,9 +20,9 @@
         vm.reset = reset;
 
         function reset() {
-            quizMetrics.changeState('results',false);
+            quizMetrics.changeState('results', false);
             quizMetrics.numCorrect = 0;
-            for(var i = 0 ; i < DataService.quizQuestions.length; i++){
+            for (var i = 0; i < DataService.quizQuestions.length; i++) {
                 var data = DataService.quizQuestions[i];
                 data.selected = null;
                 data.correct = null;
@@ -39,10 +39,10 @@
         }
 
         function getAnswerClass(index) {
-            if(index === quizMetrics.correctAnswer[vm.activeQuestion]){
+            if (index === quizMetrics.correctAnswer[vm.activeQuestion]) {
                 return 'bg-success';
 
-            }else if(index === DataService.quizQuestions[vm.activeQuestion].selected){
+            } else if (index === DataService.quizQuestions[vm.activeQuestion].selected) {
                 return 'bg-danger';
 
             }
